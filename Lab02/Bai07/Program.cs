@@ -19,6 +19,16 @@ namespace Bai07
       Console.WriteLine("a - b: {0}", a - b);
       Console.WriteLine("a * b: {0}", a * b);
       Console.WriteLine("a / b: {0}", a / b);
+      Console.WriteLine("a == b? {0}", a == b);
+      Console.WriteLine("a != b? {0}", a != b);
+
+      a = new PhanSo(6, 9);
+      b = new PhanSo(6, 9);
+
+      Console.WriteLine($"Phan so a: {a}");
+      Console.WriteLine($"Phan so b: {b}");
+      Console.WriteLine("a == b ? {0}", a == b);
+      Console.WriteLine("a != b ? {0}", a != b);
     }
   }
 }

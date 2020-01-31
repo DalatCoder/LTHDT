@@ -42,7 +42,7 @@ namespace Bai07
     public static bool operator ==(PhanSo a, PhanSo b)
     {
       var c = a - b;
-      return Math.Abs(c.tuSo / c.mauSo) == 0;
+      return Math.Abs(c.tuSo) == 0;
     }
 
     public static bool operator !=(PhanSo a, PhanSo b)
