@@ -19,8 +19,7 @@ namespace test
       var actual = sp1 + sp2;
 
       // --Assert
-      Assert.Equal(expected.PhanThuc, actual.PhanThuc);
-      Assert.Equal(expected.PhanAo, actual.PhanAo);
+      Assert.True(expected == actual);
     }
 
     [Fact]
@@ -36,8 +35,7 @@ namespace test
       var actual = sp1 - sp2;
 
       // --Assert
-      Assert.Equal(expected.PhanThuc, actual.PhanThuc);
-      Assert.Equal(expected.PhanAo, actual.PhanAo);
+      Assert.True(expected == actual);
     }
 
     [Fact]
@@ -53,8 +51,7 @@ namespace test
       var actual = sp1 * sp2;
 
       // --Assert
-      Assert.Equal(expected.PhanThuc, actual.PhanThuc);
-      Assert.Equal(expected.PhanAo, actual.PhanAo);
+      Assert.True(expected == actual);
     }
 
     [Fact]
