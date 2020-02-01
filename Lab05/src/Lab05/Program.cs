@@ -5,15 +5,13 @@ namespace Lab05
 {
   class Program
   {
-    static void Main(string[] args)
+    static void Main()
     {
       try
       {
-        Console.WriteLine("Nhap vao 1 so thap phan: ");
-        var dec = int.Parse(Console.ReadLine());
+        // TestStack_Lab05_Bai1();
 
-        ThapPhanSangNhiPhan(dec);
-        ThapPhanSangThapLucPhan(dec);
+        TestMaTran();
 
         Console.WriteLine("Bam phim bat ki de thoat...");
         Console.ReadLine();
@@ -21,7 +19,37 @@ namespace Lab05
       catch (Exception ex)
       {
         Console.WriteLine($"Co loi xay ra! {ex.Message}");
+        Program.Main();
       }
+    }
+
+    private static void TestMaTran()
+    {
+      Console.WriteLine("Nhap ma tran thu nhat: ");
+      var mt1 = new MaTran();
+      mt1.Nhap();
+      Console.WriteLine($"Ma tran thu nhat: {mt1}");
+
+      Console.WriteLine("Nhap ma tran thu hai: ");
+      var mt2 = new MaTran();
+      mt2.Nhap();
+      Console.WriteLine($"Ma tran thu hai: {mt2}");
+
+      var mt3 = mt1 + mt2;
+      Console.WriteLine($"Ma tran 1 + ma tran 2 = {mt3}");
+
+      System.Console.WriteLine($"Ma tran 1 ban dau: {mt1}");
+      mt1 = MaTran.ChuyenVi(mt1);
+      System.Console.WriteLine($"Ma tran 1 sau khi chuyen vi: {mt1}");
+    }
+
+    private static void TestStack_Lab05_Bai1()
+    {
+      Console.WriteLine("Nhap vao 1 so thap phan: ");
+      var dec = int.Parse(Console.ReadLine());
+
+      ThapPhanSangNhiPhan(dec);
+      ThapPhanSangThapLucPhan(dec);
     }
 
     private static void ThapPhanSangThapLucPhan(int dec)
