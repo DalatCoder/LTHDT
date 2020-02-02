@@ -4,6 +4,18 @@ using Lab06;
 
 namespace test
 {
+  public class DaThucTest
+  {
+    [Fact]
+    public void TestName()
+    {
+      //Given
+
+      //When
+
+      //Then
+    }
+  }
   public class QueueTest
   {
     [Fact]
