@@ -10,10 +10,19 @@ namespace Lab06
 
     public int BacDaThuc { get => n; }
 
-    public DaThuc(int n)
+    public DaThuc(int bacCaoNhat)
     {
-      this.n = n;
+      this.n = bacCaoNhat;
+      content = new double[bacCaoNhat + 1];
+    }
+    public DaThuc(params double[] danhSachHeSo)
+    {
+      this.n = danhSachHeSo.Length - 1;
       content = new double[n + 1];
+
+      var index = 0;
+      for (int i = n; i >= 0; i--)
+        content[i] = danhSachHeSo[index++];
     }
 
     public void NhapDaThucTuBanPhim()
@@ -73,6 +82,19 @@ namespace Lab06
 
       return daThucTong;
     }
+
+    public static bool operator ==(DaThuc a, DaThuc b)
+    {
+      if (a.BacDaThuc != b.BacDaThuc) return false;
+
+      for (int i = 0; i <= a.BacDaThuc; i++)
+        if (a.content[i] != b.content[i])
+          return false;
+
+      return true;
+    }
+    public static bool operator !=(DaThuc a, DaThuc b)
+      => !(a == b);
     public override string ToString()
     {
       var builder = new StringBuilder();

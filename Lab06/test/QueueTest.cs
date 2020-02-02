@@ -4,18 +4,6 @@ using Lab06;
 
 namespace test
 {
-  public class DaThucTest
-  {
-    [Fact]
-    public void TestName()
-    {
-      //Given
-
-      //When
-
-      //Then
-    }
-  }
   public class QueueTest
   {
     [Fact]
@@ -57,7 +45,6 @@ namespace test
 
       var expectedMsg = "Queue is full!";
 
-      Console.WriteLine(queue.Front + " " + queue.Rear);
       var actual = Assert.Throws<InvalidOperationException>(() => queue.Enqueue(69));
 
       Assert.Equal(expectedMsg, actual.Message);
